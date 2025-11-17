@@ -18,24 +18,33 @@ public class Game {
 
         System.out.println("Your name is " + name + " and your role is " + role + ".");
         
-        // TODO Create character by collecting user input (name + role.
+        // TODO Create character by collecting user input (name + role.)
+
+
 
         // TODO Print character sheet.
 
         // Start the adventure.
-        printDramaticText("Our adventure begins in a shady tavern ...");
+        printDramaticText("Our adventure begins in an old barn ...");
 
         // Roll a d20
-        System.out.print("Press Enter to roll a d20.");
+        System.out.print("Press A to roll a d20.");
         scanner.nextLine();
-
+        String option = scanner.nextLine();
+        if(option.toLowerCase().equals("a")) {
+            int roll = Player.rollAdvantage();
+            printDramaticText(Player.rollAdvantage() + " rolled a " + roll + ".");
+        } else {
+            int roll = Player.rollD20();
+            printDramaticText(Player.rollAdvantage() + " rolled a " + roll + ".");
+        }
+        for(int i = 0; i < 10000; i++) {
         int roll = (int)(Math.random() * 20) + 1;
-        Ascii.drawD20(roll);
+        if(roll > 20 || roll < 1); }
+                 System.out.println("i fear your range was wrong... you tried to be beat me? HA!");
+        }
 
-        // TODO Continue ...
-    }
-        
-    public static void printDramaticText(String text) {
+    public static void printDramaticText(String text) {;
         // Delay in milliseconds
         int delay = 100;
 
