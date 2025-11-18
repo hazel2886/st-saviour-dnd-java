@@ -24,7 +24,10 @@ public void attack() {
         public static int rollAdvantage() {
             int first = (int) (Math.random() * 20) + 1; 
             int second = (int) (Math.random() * 20) + 1;
-            return first;
+            if(first > second) {
+                return first;
+            }
+            return second;
 
     
 }

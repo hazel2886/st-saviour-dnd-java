@@ -16,7 +16,9 @@ public class Game {
         System.out.print("Role: ");
         String role = scanner.nextLine();
 
-        System.out.println("Your name is " + name + " and your role is " + role + ".");
+        Player player = new Player(name, role);
+
+        System.out.println("Your name is " + player.name + " and your role is " + player.role + ".");
         
         // TODO Create character by collecting user input (name + role.)
 
@@ -27,22 +29,30 @@ public class Game {
         // Start the adventure.
         printDramaticText("Our adventure begins in an old barn ...");
 
+        int requirement = generateMonster();
+
         // Roll a d20
-        System.out.print("Press A to roll a d20.");
-        scanner.nextLine();
+        int roll = 0;
+        System.out.print("Press Enter to roll a d20 or A to roll advantage.");
         String option = scanner.nextLine();
         if(option.toLowerCase().equals("a")) {
-            int roll = Player.rollAdvantage();
-            printDramaticText(Player.rollAdvantage() + " rolled a " + roll + ".");
+            roll = Player.rollAdvantage();
+            Ascii.drawD20(roll);
+            printDramaticText(player.name + " rolled a " + roll + ".");
         } else {
-            int roll = Player.rollD20();
-            printDramaticText(Player.rollAdvantage() + " rolled a " + roll + ".");
+            roll = Player.rollD20();
+            Ascii.drawD20(roll);
+            printDramaticText(player.name + " rolled a " + roll + ".");
         }
-        for(int i = 0; i < 10000; i++) {
-        int roll = (int)(Math.random() * 20) + 1;
-        if(roll > 20 || roll < 1); }
-                 System.out.println("i fear your range was wrong... you tried to be beat me? HA!");
+
+        if(roll > requirement) {
+            printDramaticText("You successfuly defeated the monster!");
+        } else {
+            printDramaticText("You did NOT defeat the monster!");
         }
+    }
+        
+        
 
     public static void printDramaticText(String text) {;
         // Delay in milliseconds
