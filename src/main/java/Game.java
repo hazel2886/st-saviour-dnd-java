@@ -46,14 +46,12 @@ public class Game {
         }
 
         if(roll > requirement) {
-            printDramaticText("You successfuly defeated the monster!");
+            printDramaticText("You successfuly defeated the zombie cow!");
         } else {
-            printDramaticText("You did NOT defeat the monster!");
+            printDramaticText("You did NOT defeat the zombie cow... you lost a limib!");
         }
     }
         
-        
-
     public static void printDramaticText(String text) {;
         // Delay in milliseconds
         int delay = 100;
