@@ -33,7 +33,7 @@ public class Game {
 
         // Roll a d20
         int roll = 0;
-        System.out.print("Press Enter to roll a d20 or A to roll advantage.");
+        System.out.print("Press B to roll a d20 or A to roll advantage.");
         String option = scanner.nextLine();
         if(option.toLowerCase().equals("a")) {
             roll = Player.rollAdvantage();
@@ -44,11 +44,11 @@ public class Game {
             Ascii.drawD20(roll);
             printDramaticText(player.name + " rolled a " + roll + ".");
         }
-
+    
         if(roll > requirement) {
             printDramaticText("You successfuly defeated the zombie cow!");
         } else {
-            printDramaticText("You did NOT defeat the zombie cow... you lost a limib!");
+            printDramaticText("You did NOT defeat the zombie cow... you lost a limb!");
         }
     }
         
