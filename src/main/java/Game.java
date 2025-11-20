@@ -19,12 +19,6 @@ public class Game {
         Player player = new Player(name, role);
 
         System.out.println("Your name is " + player.name + " and your role is " + player.role + ".");
-        
-        // TODO Create character by collecting user input (name + role.)
-
-
-
-        // TODO Print character sheet.
 
         // Start the adventure.
         printDramaticText("Our adventure begins in an old barn ...");
@@ -32,7 +26,8 @@ public class Game {
         int requirement = generateMonster();
 
         // Roll a d20
-        int roll = 0;
+        while(player.limbs >= 0) {
+            int roll = 0;
         System.out.print("Press B to roll a d20 or A to roll advantage.");
         String option = scanner.nextLine();
         if(option.toLowerCase().equals("a")) {
@@ -46,16 +41,26 @@ public class Game {
         }
     
         if(roll > requirement) {
-            printDramaticText("You successfuly defeated the zombie cow!");
+            printDramaticText("You threw a rake at the zombie cow! Good");
         } else {
             printDramaticText("You did NOT defeat the zombie cow... you lost a limb!");
+            player.limbs -= 1;
         }
-    }
+
+        }
         
-    public static void printDramaticText(String text) {;
+
+        // TODO continue ..
+        if(roll = requirement) {
+            printDramaticText("you finished the mission without being completely limbless congrats!");
+        } else {
+            printDramaticText("well... you didnt finish the mission... you lost your limibs...");
+    }
+    }
+    public static void printDramaticText(String text) {
         // Delay in milliseconds
         int delay = 100;
-
+    
         for (char c : text.toCharArray()) {
             System.out.print(c);
             try {
