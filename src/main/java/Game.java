@@ -1,10 +1,8 @@
 import java.util.Scanner;
 import java.util.concurrent.TimeUnit;
-
 public class Game {
 
     public static void main(String[] args) {
-
         // Create Scanner for collecting user input.
         Scanner scanner = new Scanner(System.in);
 
@@ -12,7 +10,7 @@ public class Game {
         System.out.print("Name: ");
         String name = scanner.nextLine();
 
-        // Collect character role from user.
+       // Collect character role from user.
         System.out.print("Role: ");
         String role = scanner.nextLine();
 
@@ -22,12 +20,10 @@ public class Game {
 
         // Start the adventure.
         printDramaticText("Our adventure begins in an old barn ...");
-
         int requirement = generateMonster();
-
         // Roll a d20
+        int roll = 0;
         while(player.limbs >= 0) {
-            int roll = 0;
         System.out.print("Press B to roll a d20 or A to roll advantage.");
         String option = scanner.nextLine();
         if(option.toLowerCase().equals("a")) {
@@ -48,19 +44,18 @@ public class Game {
         }
 
         }
-        
-
-        // TODO continue ..
-        if(roll = requirement) {
-            printDramaticText("you finished the mission without being completely limbless congrats!");
+        // TODO continue ...
+        if (roll > requirement) {
+            printDramaticText("you finished the mission! game over.");
         } else {
-            printDramaticText("well... you didnt finish the mission... you lost your limibs...");
+            printDramaticText("you did not finish the mission. game over.");
+        }
     }
-    }
+    
     public static void printDramaticText(String text) {
         // Delay in milliseconds
         int delay = 100;
-    
+
         for (char c : text.toCharArray()) {
             System.out.print(c);
             try {
@@ -73,9 +68,10 @@ public class Game {
         System.out.println();
     }
 
+    
     // Draws a monster and returns an int which represents the difficulty of roll required.
     public static int generateMonster() {
-        int r = (int)(Math.random() * 6) + 1;
+        int r = (int)(Math.random() * 6) + 1; 
         if(r == 1 || r == 2 || r == 3) {
             String zombie = Character.toString(0x1F9DF);
             System.out.println("++++++++ " + zombie + " A HORDE OF ZOMBIES " + zombie + " ++++++++");
@@ -108,4 +104,5 @@ public class Game {
         }
         return -1;
     } 
+
 }
