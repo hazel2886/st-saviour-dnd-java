@@ -19,7 +19,7 @@ public class Game {
         System.out.println("Your name is " + player.name + " and your role is " + player.role + ".");
 
         // Start the adventure.
-        printDramaticText("Our adventure begins in an old barn ...");
+        printDramaticText("Our adventure begins in an old barn ... zombies will try to eat your brain... dont let them. stay strong...");
         int requirement = generateMonster();
         // Roll a d20
         int roll = 0;
@@ -37,7 +37,7 @@ public class Game {
         }
     
         if(roll > requirement) {
-            printDramaticText("You threw a rake at the zombie cow! Good");
+            printDramaticText("You threw a rake at the zombie cow! Good job...");
         } else {
             printDramaticText("You did NOT defeat the zombie cow... you lost a limb!");
             player.limbs -= 1;
@@ -84,7 +84,7 @@ public class Game {
         }
         if(r == 4 || r == 5) {
             String mask = Character.toString(0x1F3AD);
-            System.out.println("++++++++++ " + mask + " DISGUISED MIMIC " + mask + " +++++++++");
+            System.out.println("++++++++++ " + mask + " zombie cow " + mask + " +++++++++");
             System.out.println("+                                        +");
             System.out.println("+           roll required:  12           +");
             System.out.println("+                                        +");
@@ -94,7 +94,7 @@ public class Game {
         }
         if(r == 6) {
             String eye = Character.toString(0x1F441);
-            System.out.println("+++++++++++ " + eye +  " EVIL BEHOLDER " + eye + " ++++++++++++");
+            System.out.println("+++++++++++ " + eye +  "zombie cow twin " + eye + " ++++++++++++");
             System.out.println("+                                        +");
             System.out.println("+           roll required:  18           +");
             System.out.println("+                                        +");
